@@ -166,6 +166,429 @@
         </div>
        
     </main>
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --accent-blue: #003366;
+            --bg-light: #f4f6f9;
+            --text-color: #333333;
+            --white: #ffffff;
+            --border-color: #dddddd;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--white);
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Leader Bios */
+        .leader-bio {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .multimedia-links, .course-flyers {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .multimedia-links li a, .course-flyers li a {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 8px 14px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+
+        .multimedia-links li a:hover, .course-flyers li a:hover {
+            opacity: 0.85;
+        }
+
+    </style>
+
+   <!-- Keynotes & Courses Section -->
+    <section id="keynotes-courses">
+        <div class="container">
+            <h2>KEYNOTES & COURSES</h2>
+            
+            <h3>COURSE FLYERS</h3>
+            <ul class="course-flyers">
+                <li><a href="http://fullmeasureleadership.com/wp-content/uploads/2025/12/Bakers-Dozen-Questions.pdf">AMERICAN PRINCIPLES</a></li>
+                <li><a href="http://fullmeasureleadership.com/wp-content/uploads/2025/12/2018-LLE-flyer-FINAL-003.pdf">POLICING WITH A PURPOSE</a></li>
+                <li><a href="http://fullmeasureleadership.com/wp-content/uploads/2025/12/Oath_of_Office_Training_Summary-v2.pdf">OATH OF OFFICE : TRAINING NEEDS AND BENEFITS</a></li>
+            </ul>
+
+            <!-- Dropdown Accordions replacing the static grid -->
+            <div class="course-accordions">
+                <details class="course-accordion">
+                    <summary>BUILDING CHAMPIONSHIP TEAMS</summary>
+                    <div class="course-accordion-content">
+                        <p>Details and takeaways for building championship-level collaboration, high-performing chemistry, and mutual accountability within your organization.</p>
+                    </div>
+                </details>
+
+                <details class="course-accordion">
+                    <summary>FORGING TRUSTED LEADERS & SUBORDINATES</summary>
+                    <div class="course-accordion-content">
+                        <p>Explores the fundamental roles required to build absolute trust, communication alignment, and execution proficiency across all tiers of leadership.</p>
+                    </div>
+                </details>
+
+                <details class="course-accordion">
+                    <summary>LESSONS FROM HISTORY</summary>
+                    <div class="course-accordion-content">
+                        <p>Leverages critical decision-making turning points from historical battlefields (including Gettysburg) to provide clear frameworks for modern leadership challenges.</p>
+                    </div>
+                </details>
+
+                <details class="course-accordion">
+                    <summary>SHAPING CULTURES OF ELITE ORGANIZATIONS</summary>
+                    <div class="course-accordion-content">
+                        <p>Examines how standard-setting, discipline, and shared ethos mold high-reliability teams capable of sustaining peak performance under pressure.</p>
+                    </div>
+                </details>
+
+                <details class="course-accordion">
+                    <summary>AMERICAN EXCEPTIONALISM</summary>
+                    <div class="course-accordion-content">
+                        <p>A deep dive into the historical principles, foundational governance, and civic duties that empower citizens and foster self-reliance.</p>
+                    </div>
+                </details>
+
+                <details class="course-accordion">
+                    <summary>CUSTOMIZED COURSES</summary>
+                    <div class="course-accordion-content">
+                        <p>Tailored training programs built specifically around the unique demands, operational environments, and strategic objectives of your team or agency.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Accordions / Dropdowns -->
+       <style>.course-accordions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .course-accordion {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+
+        .course-accordion summary {
+            padding: 18px 20px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+
+        .course-accordion summary:hover {
+            background-color: #f1f3f5;
+        }
+
+        /* Custom toggle icon indicator */
+        .course-accordion summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: var(--accent-blue);
+        }
+
+        .course-accordion[open] summary::after {
+            content: "−";
+        }
+
+        .course-accordion-content {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--text-color);
+        }</style> 
+
+
+    <style>
+        /* Testimonials */
+        blockquote {
+            font-style: italic;
+            background: var(--white);
+            border-left: 4px solid #666;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #e1e4e8;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .gallery-item:hover {
+            background: #d0d5dd;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-section p {
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</style>
+</head>
+<body>
+
+    <!-- Mission Statement Section -->
+    <section id="mission">
+        <div class="container">
+            <h2>MISSION STATEMENT</h2>
+            <p>We accelerate the growth of individuals and empower teams to reach their full measure so they are prepared to face the Gettysburg tests that will happen in each of our lives. Be where you need to be when you need to be there because when the time of action has arrived, the time of preparation is over. No regrets, just results.</p>
+        </div>
+    </section>
+
+    <!-- How We Execute Section -->
+    <section id="execution">
+        <div class="container">
+            <h2>HOW WE EXECUTE</h2>
+            <p>We do this through historical lesson take aways (on and off the battlefield), group discussions, learning how to measure teams and leaders, understanding the primary roles of leaders and subordinates, gaining communication and persuasion skills, establishing priorities, formulating a decision making process, perspective development, individual presentations, breakout sessions, tailored reading assignments, personal stories, team exercises and competitions, workshop activities, and by delivering specific takeaways that can be implemented immediately in the proper order. This allows teams and individuals to create their ‘Right Now Plan’ to effect the positive changes needed to accomplish the mission.</p>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+        <div class="container">
+            <h2>LEADERSHIP</h2>
+            
+            <div class="leader-bio">
+                <h3>Jeffrey Utsch</h3>
+                <p>Senior Faculty Lead Instructor at the Leadership and Freedom Center in Gettysburg, Pennsylvania, where he teaches leadership lessons learned from the battle and forging trusted teams and leaders. Jeff also teaches professional development and leading with a purpose courses to law enforcement, military and other agencies around the country. Jeff believes “Freedom is Not a Spectator Sport” and the more we understand our shared history the better we will govern ourselves. He has 32 years experience as President and CEO of a small company and 30 years’ experience as a Tactical Swim Instructor to Naval Special Warfare and other U.S. military personnel. Jeff was an NCAA-All American Swimmer and Captain of the University of Arizona Swim Team where he also earned a degree in Aerospace Engineering. He currently serves on the Board of the SEAL Veterans Foundation. <a href="https://www.jeffutsch.com/" target="_blank">JeffUtsch.com</a></p>
+                
+                <h3>JEFF UTSCH MULTIMEDIA</h3>
+                <ul class="multimedia-links">
+                    <li><a href="https://www.youtube.com/watch?v=jULktTDIXqQ">PODCAST Facing America</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=ID5SujGVDiM">PODCAST The Constitution</a></li>
+                    <li><a href="url?id=10">PODCAST Exceptionalism</a></li>
+                </ul>
+            </div>
+
+            <div class="leader-bio">
+                <h3>Christopher Brownell</h3>
+                <p>Exceptional organizational leader with over 32 years of experience in Special Operations, the last 15 years as a Command Master Chief in the SEAL Teams. He served as the NSW Group 2 CMC with direct leadership oversight on all aspects of personnel management, training, and logistics for all the east coast SEAL Teams and supporting commands, over 2800 personnel. Last served as the J3 Senior Enlisted Advisor to the General with direct oversight of all SOF Operations Globally. An effective and practiced communicator able to speak and write persuasively across demographic, geographic and cross-functional divides while delivering critical insightful analysis. Easily develops relationships to achieve consensus with foreign and domestic military, government officials and civilian leaders. Vice Chairman of the SEAL Legacy Foundation, a 501C(3) non-profit dedicated to supporting the families of the wounded and fallen United States Navy SEALs, which has given over $35 Million to the NSW Community over the past 13 years. Brownell holds a Master’s Degree in Organizational Leadership, a BS in Organizational Leadership, and has an Active (DoD) TS/SCI Security Clearance.</p>
+                
+                <h3>CHRISTOPHER BROWNELL MULTIMEDIA</h3>
+                <ul class="multimedia-links">
+                    <li><a href="url?id=11">The Unbreakable SEAL</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>TESTIMONIALS</h2>
+            <blockquote>“I appreciated the breadth of the content (leadership, Gettysburg, Constitution, etc.) and how it all tied into application to our lives.”</blockquote>
+            <blockquote>“Thank you for pouring into us what you have spent a lifetime learning. You are a true inspiration and reveal many areas of my life that require my immediate attention.”</blockquote>
+            <blockquote>“I learned something every day this week. I was also reminded I have a lot to learn.”</blockquote>
+            <blockquote>“Your passion is unparalleled, and it showed. I noticed others throughout these past four days change, and heard them discussing the battle unprompted. I’ve never seen these guys talk about a course so freely. That was because of you.”</blockquote>
+            <blockquote>“Overall the course was awesome. The material was captivating, and the instructor was very knowledgeable. The personal stories added in refreshed the attention span of even the most spaced out individuals. I thoroughly enjoyed the course and would take it again in a heartbeat.”</blockquote>
+        </div>
+
+        <style>
+        /* Testimonials */
+        blockquote {
+            font-style: italic;
+            background: var(--white);
+            border-left: 4px solid #666;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #e1e4e8;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .gallery-item:hover {
+            background: #d0d5dd;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-section p {
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        </style>
+
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2>GALLERY</h2>
+            <div class="gallery-grid">
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-1.png" class="gallery-item">Photo 1</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-20-edit-2.png" class="gallery-item">Photo 2</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-3.png" class="gallery-item">Photo 3</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-Jeff-only-1.png" class="gallery-item">Photo 4</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-22-edit-2.png" class="gallery-item">Photo 5</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-Jeff-only-2.png" class="gallery-item">Photo 6</a>
+                <a href="https://fullmeasureleadership.com/wp-content/uploads/2025/09/Teaching-21-edit.png" class="gallery-item">Photo 7</a>
+                <a href="url?id=22" class="gallery-item">Photo 8</a>
+                <a href="url?id=23" class="gallery-item">Photo 9</a>
+                <a href="url?id=24" class="gallery-item">Photo 10</a>
+                <a href="url?id=25" class="gallery-item">Photo 11</a>
+                <a href="url?id=26" class="gallery-item">Photo 12</a>
+                <a href="url?id=27" class="gallery-item">Photo 13</a>
+                <a href="url?id=28" class="gallery-item">Photo 14</a>
+                <a href="url?id=29" class="gallery-item">Photo 15</a>
+                <a href="url?id=30" class="gallery-item">Photo 16</a>
+                <a href="url?id=31" class="gallery-item">Photo 17</a>
+                <a href="url?id=32" class="gallery-item">Photo 18</a>
+                <a href="url?id=33" class="gallery-item">Photo 19</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container contact-section">
+            <h2>CONTACT</h2>
+            <p>
+                <a href="https://fullmeasureleadership.com/#gallery-title4">Email Jeff</a> &bull; <a href="mailto:chris@fullmeasureleadership.com">Email Chris</a>
+            </p>
+            <p>jeff@fullmeasureleadership.com || chris@fullmeasureleadership.com</p>
+            <p><strong>Contact Us:</strong> 520-977-7946</p>
+            <p style="margin-top: 20px;"><a href="https://fullmeasureleadership.com/">HOME</a></p>
+        </div>
+    </section>
 
 </body>
 </html>
